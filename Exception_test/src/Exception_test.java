@@ -16,7 +16,7 @@ public class Exception_test {
 //		for(int i = 0; i < TN_list.size(); i++)
 //		System.out.println(TN_list.get(i));  
 		//테이블명 잘 가져와짐
-		LinkedHashMap<String,String> TD_hm = ut.getTableData(conn, TN_list); 
+		List<LinkedHashMap<String,String>> FData = ut.getTableData(conn, TN_list); 
 		////////////////////////////////////////////////////////////테이블 내용 가져오기
 		
 		
