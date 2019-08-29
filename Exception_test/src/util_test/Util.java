@@ -45,8 +45,10 @@ public class Util {
 		return TN_list;
 	}
 	
-	public LinkedHashMap<String,String> getTableData(Connection conn, List<String> TN_list){
+	public List<LinkedHashMap<String,String>> getTableData(Connection conn, List<String> TN_list){
+		
 		List<LinkedHashMap<String, String>> FData = new ArrayList<LinkedHashMap<String, String>>();
+		
 		LinkedHashMap<String, String> TD_hm = new LinkedHashMap<String, String>();
 		String sql = "";
 		PreparedStatement pstmt = null;
@@ -70,8 +72,6 @@ public class Util {
 					}
 					FData.add(TD_hm);
 				}
-				
-				
 			}
 			
 			
@@ -82,8 +82,6 @@ public class Util {
 			if( pstmt != null) try {pstmt.close();}catch(Exception e){}
 			if( conn != null) try {conn.close();}catch(Exception e) {}
 		}
-		
-		
-		return TD_hm; 
+		return FData; 
 	}
 }
